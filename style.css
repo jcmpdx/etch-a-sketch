@@ -1,3 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-270deg, #640000, #310000, #222222, #424242);
+    background-size: 400% 400%;
+    animation: gradient 18s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.header {
+    width: 100%;
+    margin: 60px 0 60px 38px;
+    text-align: center;
+    font-size: 50px;
+}
+.mainbody {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-right: 100px;
+}
+.controlpanel{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+}
+.controlpanel button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    height: 40px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.colorbar{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+#colorbtn {
+    width: 105px;
+}
+#colorwheel {
+    width: 40px;
+    height: 40px;
+    background-color: #534caf;
+}
+.slidercontainer {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#slider {
+    height: 66%;
+    background-color: rgb(0, 0, 0);
+}
+#slidertext {
+    font-size: 14px;
+}
+.gridcontainer{
+    background-color: antiquewhite;
+    width: 512px;
+    height: 512px;
+    min-width: 512px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.footer {
+    width: 100%;
+    text-align: center;
     
 }
