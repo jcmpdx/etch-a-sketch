@@ -4,16 +4,19 @@ const gridContainer = document.querySelector('.gridcontainer');
 const slideValue = document.querySelector('#slidertext');
 const inputSlider = document.querySelector('input');
 
-function fillGrid(gridNum) {
+function sizeGrid(gridNum, color) {
     gridArea = gridNum ** 2;
-    let cellDim = gridNum * (gridSize / gridArea); 
-    console.log("gridArea = " + gridArea);
-    console.log("cellDim = " + cellDim);
+    let cellDim = gridNum * (gridSize / gridArea);
+    console.log(`${gridNum}x${gridNum}`); // remove later
     for (let i = 1; i <= gridArea; i++) {
         let cell = document.createElement('div');
-        cell.setAttribute('name', `'cell${i}'`);
+        cell.setAttribute('id', `'cell${i}'`);
+        cell.setAttribute('class', 'cell');
         cell.style.cssText = `width: ${cellDim}px; height: ${cellDim}px; 
-        box-shadow: inset 0px 0px 0px 0.5px #000;`;
+        box-shadow: inset 0px 0px 0px .5px #000;`;
+        cell.addEventListener('mouseover', function() {
+            cell.style.backgroundColor = '#000';
+        })
         gridContainer.appendChild(cell);
     }
 }
@@ -36,6 +39,14 @@ inputSlider.oninput = (() => {
     }
     slideValue.textContent = `${n}x${n}`;
     clearGrid();
-    fillGrid(n);
+    sizeGrid(n);
 });
 
+// add 2nd argument to take color
+sizeGrid(cellDefaultSize);
+
+
+// Erase
+document.getElementById("rainbowbtn").addEventListener("mouseout", function() {
+    document.getElementById("rainbowbtn").style.backgroundColor = "green";
+});
