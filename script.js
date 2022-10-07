@@ -3,6 +3,7 @@ const cellDefaultSize = 16;
 const gridContainer = document.querySelector('.gridcontainer');
 const slideValue = document.querySelector('#slidertext');
 const inputSlider = document.querySelector('input');
+const resetButton = document.querySelector('#resetBtn');
 
 function sizeGrid(gridNum, color) {
     gridArea = gridNum ** 2;
@@ -27,7 +28,7 @@ function clearGrid() {
     }
 }
 
-inputSlider.oninput = (() => {
+function resetGrid() {
     let value = inputSlider.value;
     let n = cellDefaultSize;
     if (value == 3) {
@@ -40,13 +41,16 @@ inputSlider.oninput = (() => {
     slideValue.textContent = `${n}x${n}`;
     clearGrid();
     sizeGrid(n);
-});
+}
+
+inputSlider.addEventListener('input', (() => { resetGrid(); }));
+resetButton.addEventListener('click', (() => { resetGrid(); }));
 
 // add 2nd argument to take color
 sizeGrid(cellDefaultSize);
 
 
 // Erase
-document.getElementById("rainbowbtn").addEventListener("mouseout", function() {
-    document.getElementById("rainbowbtn").style.backgroundColor = "green";
-});
+// document.getElementById("rainbowbtn").addEventListener("mouseout", function() {
+//     document.getElementById("rainbowbtn").style.backgroundColor = "green";
+// });

@@ -69,6 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 0 0 2px 0;
 }
 #slider {
     height: 66%;
