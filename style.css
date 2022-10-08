@@ -59,10 +59,9 @@ body {
 #colorbtn {
     width: 105px;
 }
-#colorwheel {
+#colorpicker {
     width: 40px;
     height: 40px;
-    background-color: #534caf;
 }
 .slidercontainer {
     height: 40px;

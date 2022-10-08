@@ -2,12 +2,14 @@ const gridSize = 512;
 const cellDefaultSize = 16;
 const gridContainer = document.querySelector('.gridcontainer');
 const slideValue = document.querySelector('#slidertext');
-const inputSlider = document.querySelector('input');
+const inputSlider = document.querySelector('#inputslider');
 const resetButton = document.querySelector('#resetBtn');
+const colorPicker = document.querySelector('#colorpicker');
 
 function sizeGrid(gridNum, color) {
     gridArea = gridNum ** 2;
     let cellDim = gridNum * (gridSize / gridArea);
+    color = colorPicker.value;
     console.log(`${gridNum}x${gridNum}`); // remove later
     for (let i = 1; i <= gridArea; i++) {
         let cell = document.createElement('div');
@@ -16,7 +18,7 @@ function sizeGrid(gridNum, color) {
         cell.style.cssText = `width: ${cellDim}px; height: ${cellDim}px; 
         box-shadow: inset 0px 0px 0px .5px #000;`;
         cell.addEventListener('mouseover', function() {
-            cell.style.backgroundColor = '#000';
+            cell.style.backgroundColor = `${color}`;
         })
         gridContainer.appendChild(cell);
     }
@@ -54,3 +56,5 @@ sizeGrid(cellDefaultSize);
 // document.getElementById("rainbowbtn").addEventListener("mouseout", function() {
 //     document.getElementById("rainbowbtn").style.backgroundColor = "green";
 // });
+
+// color button: 
