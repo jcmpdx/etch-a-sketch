@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Skeeeetch</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <span id="title">etch-a-sketch</span>
+    </div>
+    <div class="mainbody">
+        <div class="controlpanel">
+            <div class="colorbar">
+                <input type="color" id="colorpicker" value="#000000">
+            </div>
+            <button id="rainbowbtn">RAINBOW</button>
+            <div class="slidercontainer">
+                <input type="range" id="inputslider" min="1" max="3" value="1" steps="3">
+                <div id="slidertext">16x16</div>
+            </div>
+            <button id="resetBtn">RESET</button>
+        </div>
+        <div class="gridcontainer">
+
+        </div>
+    </div>
+    <div class="footer">
+        <span><a href="https://github.com/jcmpdx/etch-a-sketch" target="_blank">made by jcmpdx</a></span>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
