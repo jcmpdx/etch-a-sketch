@@ -8,6 +8,7 @@ const colorPicker = document.querySelector('#colorpicker');
 const randomPicker = document.querySelector('#rainbowbtn');
 let color = colorPicker.value;
 let inputVal = 0;
+let spam = false;
 
 function init(gridNum, color) {
     gridArea = gridNum ** 2;
@@ -16,12 +17,14 @@ function init(gridNum, color) {
     for (let i = 1; i <= gridArea; i++) {
         colorPicker.addEventListener('click', () => { color = colorPicker.value;
             return color; });
+        randomPicker.addEventListener('click', () => { spam = true; });
         // if randomPicker click event fire, run makeRandomColor()
         let cell = document.createElement('div');
         cell.setAttribute('id', `'cell${i}'`);
         cell.setAttribute('class', 'cell');
         cell.style.cssText = `width: ${cellDim}px; height: ${cellDim}px; box-shadow: inset 0px 0px 0px .5px rgb(0,0,0,0.25);`;
         cell.addEventListener('mouseover', function() {
+            if (spam) makeRandomColor();
             cell.style.backgroundColor = `${color}`;
         })
         gridContainer.appendChild(cell);
@@ -32,8 +35,7 @@ function makeRandomColor() {
     let r = Math.floor(Math.random() * 255);
     let g = Math.floor(Math.random() * 255);
     let b = Math.floor(Math.random() * 255);
-    color = `rgb(${r}, ${g}, ${b})`
-    return color; 
+    color = `rgb(${r}, ${g}, ${b})`;
 }
 
 function clearGrid() {
@@ -62,10 +64,9 @@ function resetGrid() {
 // active listeners
 inputSlider.addEventListener('input', (() => { resetGrid(); }));
 resetButton.addEventListener('click', (() => { resetGrid(); }));
-randomPicker.addEventListener('click', (() => { console.log('clicked') }));
 
 // add 2nd argument to take color
 init(cellDefaultSize, color);
 
 // window.onload to run init()?
-// need to make color be able to change when cells already colored with a different color. idea is to create new function to target the gridcontainers children to colorize background. take out of sizeGrid() for loop
+// rainbow effect isn't updating unless grid is changed
