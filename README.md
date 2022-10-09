@@ -7,4 +7,3 @@ https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 4. EXTRA - Instead of just changing the color of a square from black to white (for example), have each pass through with the mouse change it to a completely random RGB value. Then try having each pass just add another 10% of black to it so that only after 10 passes is the square completely black.
 =======
 4. EXTRA - Instead of just changing the color of a square from black to white (for example), have each pass through with the mouse change it to a completely random RGB value. Then try having each pass just add another 10% of black to it so that only after 10 passes is the square completely black.
->>>>>>> 518b1f3181a3a4153e2328b0ae4fdc18126c055d
