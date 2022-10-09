@@ -40,8 +40,9 @@ body {
     width: 150px;
 }
 .controlpanel button {
-    background-color: #4CAF50;
-    border: none;
+    background-color: #640000;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 4px;
     color: white;
     height: 40px;
     width: auto;
@@ -55,11 +56,9 @@ body {
     justify-content: space-between;
     gap: 8px;
 }
-#colorbtn {
-    width: 105px;
-}
+
 #colorpicker {
-    width: 40px;
+    width: 150px;
     height: 40px;
 }
 .slidercontainer {
@@ -81,12 +80,17 @@ body {
     width: 512px;
     height: 512px;
     min-width: 512px;
+    border: solid 4px black;
+    border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }
 .footer {
     width: 100%;
-    text-align: center;
-    
+    text-align: center;   
+}
+a {
+    text-decoration: none;
+    color: white;
 }
